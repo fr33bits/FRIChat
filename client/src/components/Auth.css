@@ -1,0 +1,220 @@
+.auth-background {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(30, 4, 33, 1) 10%, rgba(238, 35, 12, 1) 100%);
+    align-items: center;
+}
+
+.auth-heading {
+    color: white;
+    font-size: 70px;
+    text-align: 'center';
+    padding: '60px 30px 0px 30px';
+}
+
+.auth-form-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+
+    padding: 2rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding: 2rem;
+    box-shadow: 0px 1px 5px rgb(0 0 0 / 10%);
+    border-radius: 25px;
+    transition: 0.8s ease;
+    background: #fff;
+}
+
+.auth-tab-container {
+    background-color: #EE230C;
+    color: white;
+    border-radius: 25px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.auth-tab {
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.auth-tab-text-container {
+    padding: 8px;
+}
+
+.auth-tab-selected {
+    background-color: white;
+    color: #EE230C;
+    border-radius: 20px;
+}
+
+.auth-form-field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    margin: 1rem 0rem;
+}
+
+.auth-form-field label {
+    margin-bottom: 0.45rem;
+    color: #EE230C;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.7px;
+    line-height: 1.3;
+}
+
+.auth-form-field input {
+    padding: 0.55rem 0.4rem;
+    border: 1px solid #dcdddd;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: all 150ms ease-in-out 0s;
+    background: white;
+}
+
+.auth-form-field input::placeholder {
+    color: #9b9b9b;
+    width: 100%;
+    font-weight: unset;
+}
+
+.auth-form-field input:hover {
+    border-color: #EE230C;
+}
+
+.auth-form-field input:focus,
+.auth-form-field input:active {
+    box-shadow: 0px 0px 0px 1.5px #EE230C;
+    border-color: #EE230C;
+}
+
+.auth-form-field input {
+    color: #EE230C
+}
+
+.auth-form-field-password {
+    position: absolute;
+    right: 13%;
+    top: 50%;
+    cursor: pointer;
+}
+
+.auth-form-error-message {
+    color: #EE230C;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: center;
+
+}
+
+.auth-form-button {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.auth-form-button button {
+    width: 50%;
+    border-radius: 25px;
+    background: #EE230C;
+    border: 3px solid #EE230C;
+    color: white;
+    font-weight: 800;
+    padding: 0.7rem 1.2rem;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.auth-form-button button:hover {
+    background: #EE230C;
+}
+
+/* TODO: ORGANIZE */
+
+.auth__form-container_image {
+    flex: 3;
+    display: flex;
+    box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.05);
+}
+
+.auth__form-container_image img {
+    width: 100%;
+    height: 100%;
+}
+
+.auth__form-container_fields-content p {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #05245a;
+    font-weight: 900;
+}
+
+.auth__form-container_fields-account {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-top: 0.2rem;
+}
+
+.auth__form-container_fields-account p {
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+}
+
+.auth__form-container_fields-account span {
+    color: #EE230C;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 800px) {
+    .auth__form-container {
+        flex-direction: column-reverse;
+    }
+
+    .auth__form-container_fields {
+        justify-content: flex-start;
+    }
+
+    .auth__form-container_image {
+        height: 100px;
+        flex: none;
+        box-shadow: none;
+    }
+
+    .auth__form-container_image img {
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .auth__form-container_fields {
+        padding: 2rem 0.5rem;
+    }
+
+    .auth__form-container_fields-content_input input {
+        width: 95%;
+    }
+
+    .auth__form-container_fields-content_input-password {
+        right: 3%;
+    }
+}
