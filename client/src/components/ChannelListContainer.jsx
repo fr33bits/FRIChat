@@ -8,26 +8,18 @@ import TeamChannelPreview from './TeamChannelPreview'
 import Logo from '../assets/logo.png'
 import LogoutIcon from '../assets/logout.png'
 
+import './Sidebar.css'
+
 const cookies = new Cookies()
 
-const SideBar = ({ logout }) => (
-    <div className="channel-list__sidebar">
-        <div className="channel-list__sidebar__icon1">
-            <div className="icon1__inner">
-                <img src={Logo} alt="FRIChat logo" width="30"/>
-            </div>
-        </div>
-        <div className="channel-list__sidebar__icon2">
+const Header = ({ logout }) => (
+    <div className="sidebar-header">
+        <div className="sidebar-header-service-name-text">FRIChat</div>
+        <div className="sidebar-header-logout-icon">
             <div className="icon1__inner" onClick={logout}>
                 <img src={LogoutIcon} alt="Odjava" width="30"/>
             </div>
         </div>
-    </div>
-)
-
-const Header = ({ logout }) => (
-    <div className="channel-list__header">
-        <p className="channel-list__header__text">FRIChat</p>
     </div>
 )
 
@@ -59,9 +51,8 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
 
   return (
     <>
-        <SideBar logout={logout}/>
         <div className="channel-list__list__wrapper">
-            <Header/>
+            <Header logout={logout}/>
             <ChannelSearch setToggleContainer={setToggleContainer} />
 
             {/* List uporablja za prikazovanje zaželjenga seznama; znotraj specifiramo callback funkcijo, ki vrne komponento, ki jo želimo */}
