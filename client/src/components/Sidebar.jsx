@@ -1,148 +1,41 @@
-import React, { useState } from 'react'
-import { ChannelList, useChat, useChatContext } from 'stream-chat-react'
-import Cookies from 'universal-cookie'
+import React from 'react'
+import { Channel, useChatContext, MessageSimple } from 'stream-chat-react'
 
-import ChannelSearch from './ChannelSearch' 
-import TeamChannelList from './TeamChannelList' 
-import TeamChannelPreview from './TeamChannelPreview'
-import Logo from '../assets/logo.png'
-import LogoutIcon from '../assets/logout.png'
+import ChannelInner from './ChannelInner.jsx'
+import CreateChannel from './CreateChannel.jsx'
+import EditChannel from './EditChannel.jsx'
+// import TeamMessage from './TeamMessage.jsx'
 
-import './Sidebar.css'
+const ChannelContainer = ({ isCreating, setIsCreating, editing, setIsEditing, createType, setCreateType }) => {
+  const { channel } = useChatContext() // pridobimo podatke o specifičnem kanalu
 
-const cookies = new Cookies()
+  if (isCreating) { // če se kanal trenutno ustvarja
+    return (
+      <div className="channel__container">
+        <CreateChannel createType={createType} setIsCreating={setIsCreating}/>
+      </div>
+    )
+  }
 
-const Header = ({ logout }) => (
-    <div className="sidebar-header">
-        <div className="sidebar-header-service-name-text">FRIChat</div>
-        <div className="sidebar-header-logout-icon">
-            <div className="icon1__inner" onClick={logout}>
-                <img src={LogoutIcon} alt="Odjava" width="30"/>
-            </div>
-        </div>
+  if (editing) { // če se kanal urejuje
+    return (
+      <EditChannel setIsEditing={setIsEditing}/>
+    )
+  }
+
+  const EmptyState = () => { // chat with 0 messages
+    <div className='channel-empty__container'>
+      <p className='channel-empty__first'>Pogovor je prazen. Pošljite kakšno sporočilo!</p>
     </div>
-)
-
-const customChannelTeamFilter = (channels) => {
-    return channels.filter((channel) => channel.type === 'team')
-}
-
-const customChannelMessagingFilter = (channels) => {
-    return channels.filter((channel) => channel.type === 'messaging')
-}
-
-
-const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEditing, setToggleContainer }) => { // TODO: but isCreating was not passed at the bottom?
-    const { client } = useChatContext()
-
-    const logout = () => {
-        cookies.remove('token');
-        cookies.remove('token');
-        cookies.remove('username');
-        cookies.remove('fullName');
-        cookies.remove('userID');
-        cookies.remove('avatarURL');
-        cookies.remove('hashedPassword');
-
-        window.location.reload() // ponovno nalaganje strani, da pridemo do prijavne strani
-    }
-
-    const filter = { members: { $in: [client.userID] } } // all channels and direct messages where the client user is included
+  }
 
   return (
-    <>
-        <div className="channel-list__list__wrapper">
-            <Header logout={logout}/>
-            <ChannelSearch setToggleContainer={setToggleContainer} />
-
-            {/* List uporablja za prikazovanje zaželjenga seznama; znotraj specifiramo callback funkcijo, ki vrne komponento, ki jo želimo */}
-            {/* StreamAPI nam pomaga, ker imamo že narejeno funkcijo s kanali  */}
-            <ChannelList
-                filters={filter}
-                channelRenderFilterFn={customChannelTeamFilter}
-                List={(listProps) => (
-                    <TeamChannelList
-                        { ...listProps} // custom component TeamChannelList will get all the props that the components ChannelList would usually get using stream
-                        type='team'
-                        isCreating={isCreating}
-                        setIsCreating={setIsCreating}
-                        setCreateType={setCreateType}
-                        setIsEditing={setIsEditing}
-                        setToggleContainer={setToggleContainer}
-                    />
-                    
-                )}
-                Preview={(previewProps) => (
-                    <TeamChannelPreview
-                        { ...previewProps }
-                        type='team'
-                        setIsCreating={setIsCreating}
-                        setIsEditing={setIsEditing}
-                        setToggleContainer={setToggleContainer}
-                    />
-                )}
-            />
-            <ChannelList // for non-group chats
-                filters={filter}
-                channelRenderFilterFn={customChannelMessagingFilter}
-                List={(listProps) => (
-                    <TeamChannelList
-                        { ...listProps} // custom component TeamChannelList will get all the props that the components ChannelList would usually get using stream
-                        type='messaging'
-                        isCreating={isCreating}
-                        setIsCreating={setIsCreating}
-                        setCreateType={setCreateType}
-                        setIsEditing={setIsEditing}
-                        setToggleContainer={setToggleContainer}
-                    />
-                )}
-                Preview={(previewProps) => (
-                    <TeamChannelPreview
-                        { ...previewProps }
-                        type='messaging'
-                        setIsCreating={setIsCreating}
-                        setIsEditing={setIsEditing}
-                        setToggleContainer={setToggleContainer}
-                    />
-                )}
-            />
-        </div>
-    </>
+    <div className='channel__container'>
+      <Channel EmptyStateIndicator={EmptyState} Message={(messageProps, i) => <MessageSimple key={i} { ...messageProps}/>}>
+        <ChannelInner setIsEditing={setIsEditing}/>
+      </Channel>
+    </div>
   )
 }
 
-const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing }) => {
-    const [toggleContainer, setToggleContainer] = useState(false)
-
-    return (
-        <>
-            {/* Desktop: */}
-            <div className='channel-list__container'>
-                <ChannelListContent
-                    setIsCreating={setIsCreating}
-                    setCreateType={setCreateType}
-                    setIsEditing={setIsEditing}
-                />
-            </div>
-            {/* Mobile: */}
-            <div
-                className='channel-list__container-responsive'
-                style={{left: toggleContainer ? '0%' : '-89%', background: "#005fff"}}
-            >
-                <div
-                    className='channel-list__container-toggle'
-                    onClick={() => setToggleContainer((prevToggleContainer) => !prevToggleContainer)}
-                >
-                </div>
-                <ChannelListContent
-                    setIsCreating={setIsCreating}
-                    setCreateType={setCreateType}
-                    setIsEditing={setIsEditing}
-                    setToggleContainer={setToggleContainer}
-                />
-            </div>
-        </>
-    )
-}
-
-export default ChannelListContainer
+export default ChannelContainer

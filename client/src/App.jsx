@@ -7,7 +7,7 @@ import './app.css'
 import 'stream-chat-react/dist/css/index.css' // using their CSS for prebuilt components
 
 // komponente
-import Sidebar from './components/Sidebar.jsx'
+import ChannelListContainer from './components/ChannelListContainer'
 import ChannelContainer from './components/ChannelContainer'
 import ChannelSearch from './components/ChannelSearch'
 import TeamChannelList from './components/TeamChannelList'
@@ -48,7 +48,7 @@ const App = () => {
         return ( // prikaže, če smo že prijavljeni
             <div className="app__wrapper">
                 <Chat client={client} theme="team light">
-                    <Sidebar
+                    <ChannelListContainer
                         isCreating={isCreating}
                         setIsCreating={setIsCreating}
                         setCreateType={setCreateType}
