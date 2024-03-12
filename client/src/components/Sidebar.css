@@ -1,3 +1,9 @@
+/* Potrebno, sicer se te spremenjljivke nastavijo na druge vrednosti */
+:root {
+    --primary-color: #EE230C;
+    --primary-color-alpha: #005fff1a;
+}
+
 /* SIDEBAR CONTAINER */
 .sidebar-container {
     display: flex;
@@ -33,11 +39,11 @@
     flex-direction: column;
     background: var(--primary-color);
     width: 240px;
-  }
+}
 
-  @media screen and (max-width: 960px) {
+@media screen and (max-width: 960px) {
     .sidebar-wrapper {
-      width: 100%;
+        width: 100%;
     }
 }
 
