@@ -3,8 +3,8 @@ import { ChannelList, useChat, useChatContext } from 'stream-chat-react'
 import Cookies from 'universal-cookie'
 
 import ChannelSearch from './ChannelSearch' 
-import TeamChannelList from './TeamChannelList' 
-import TeamChannelPreview from './TeamChannelPreview'
+import ChatList from './ChatList' 
+import ChatPreview from './ChatPreview'
 import SettingsIcon from '../assets/settings.png'
 import LogoutIcon from '../assets/logout.png'
 
@@ -65,8 +65,8 @@ const SidebarContainer = ({ isCreating, setIsCreating, setCreateType, setIsEditi
                 filters={filter}
                 channelRenderFilterFn={customChannelTeamFilter}
                 List={(listProps) => (
-                    <TeamChannelList
-                        { ...listProps} // custom component TeamChannelList will get all the props that the components ChannelList would usually get using stream
+                    <ChatList
+                        { ...listProps} // custom component ChatList will get all the props that the components ChannelList would usually get using stream
                         type='team'
                         isCreating={isCreating}
                         setIsCreating={setIsCreating}
@@ -77,7 +77,7 @@ const SidebarContainer = ({ isCreating, setIsCreating, setCreateType, setIsEditi
                     
                 )}
                 Preview={(previewProps) => (
-                    <TeamChannelPreview
+                    <ChatPreview
                         { ...previewProps }
                         type='team'
                         setIsCreating={setIsCreating}
@@ -90,8 +90,8 @@ const SidebarContainer = ({ isCreating, setIsCreating, setCreateType, setIsEditi
                 filters={filter}
                 channelRenderFilterFn={customChannelMessagingFilter}
                 List={(listProps) => (
-                    <TeamChannelList
-                        { ...listProps} // custom component TeamChannelList will get all the props that the components ChannelList would usually get using stream
+                    <ChatList
+                        { ...listProps} // custom component ChatList will get all the props that the components ChannelList would usually get using stream
                         type='messaging'
                         isCreating={isCreating}
                         setIsCreating={setIsCreating}
@@ -101,7 +101,7 @@ const SidebarContainer = ({ isCreating, setIsCreating, setCreateType, setIsEditi
                     />
                 )}
                 Preview={(previewProps) => (
-                    <TeamChannelPreview
+                    <ChatPreview
                         { ...previewProps }
                         type='messaging'
                         setIsCreating={setIsCreating}

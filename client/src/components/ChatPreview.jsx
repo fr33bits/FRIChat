@@ -2,7 +2,7 @@ import React from 'react'
 import { AllowAll } from 'stream-chat';
 import { Avatar, useChatContext } from 'stream-chat-react'
 
-const TeamChannelPreview = ({ setIsCreating, setIsEditing, channel, type, setToggleContainer, setActiveChannel }) => {
+const ChatPreview = ({ setIsCreating, setIsEditing, channel, type, setToggleContainer, setActiveChannel }) => {
     const { channel: activeChannel, client } = useChatContext();
 
     const ChannelPreview = () => (
@@ -49,4 +49,4 @@ const TeamChannelPreview = ({ setIsCreating, setIsEditing, channel, type, setTog
   )
 }
 
-export default TeamChannelPreview
+export default ChatPreview

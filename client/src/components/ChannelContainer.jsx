@@ -12,14 +12,14 @@ const ChannelContainer = ({ isCreating, setIsCreating, editing, setIsEditing, cr
   if (isCreating) { // če se kanal trenutno ustvarja
     return (
       <div className="channel__container">
-        <CreateChannel createType={createType} setIsCreating={setIsCreating}/>
+        <CreateChannel createType={createType} setIsCreating={setIsCreating} />
       </div>
     )
   }
 
   if (editing) { // če se kanal urejuje
     return (
-      <EditChannel setIsEditing={setIsEditing}/>
+      <EditChannel setIsEditing={setIsEditing} />
     )
   }
 
@@ -31,8 +31,8 @@ const ChannelContainer = ({ isCreating, setIsCreating, editing, setIsEditing, cr
 
   return (
     <div className='channel__container'>
-      <Channel EmptyStateIndicator={EmptyState} Message={(messageProps, i) => <MessageSimple key={i} { ...messageProps}/>}>
-        <ChannelInner setIsEditing={setIsEditing}/>
+      <Channel EmptyStateIndicator={EmptyState} Message={(messageProps, i) => <MessageSimple key={i} {...messageProps} />}>
+        <ChannelInner setIsEditing={setIsEditing} />
       </Channel>
     </div>
   )

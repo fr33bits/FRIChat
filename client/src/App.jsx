@@ -10,12 +10,12 @@ import 'stream-chat-react/dist/css/index.css' // using their CSS for prebuilt co
 import Sidebar from './components/Sidebar.jsx'
 import ChannelContainer from './components/ChannelContainer.jsx'
 import ChannelSearch from './components/ChannelSearch.jsx'
-import TeamChannelList from './components/TeamChannelList'
+import ChatList from './components/ChatList'
 import Auth from './components/Auth.jsx'
 import ChannelInner from './components/ChannelInner.jsx'
 import CreateChannel from './components/CreateChannel.jsx'
 import EditChannel from './components/EditChannel.jsx'
-import TeamMessage from './components/TeamMessage.jsx'
+// import TeamMessage from './components/TeamMessage.jsx'
 import UserList from './components/UserList.jsx'
 
 const cookies = new Cookies()

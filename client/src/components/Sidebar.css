@@ -38,7 +38,8 @@
 .sidebar-wrapper {
     display: flex;
     flex-direction: column;
-    background: var(--primary-color);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(30, 4, 33, 1) 10%, rgba(238, 35, 12, 1) 100%);
     width: 240px;
 }
 
@@ -47,6 +48,7 @@
         width: 100%;
     }
 }
+
 
 /* HEADER */
 .sidebar-header {
