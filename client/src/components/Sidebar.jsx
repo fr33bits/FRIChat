@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie'
 import ChannelSearch from './ChannelSearch' 
 import TeamChannelList from './TeamChannelList' 
 import TeamChannelPreview from './TeamChannelPreview'
+import SettingsIcon from '../assets/settings.png'
 import LogoutIcon from '../assets/logout.png'
 
 import './Sidebar.css'
@@ -14,9 +15,14 @@ const cookies = new Cookies()
 const Header = ({ logout }) => (
     <div className="sidebar-header">
         <div className="sidebar-header-service-name-text">FRIChat</div>
-        <div className="sidebar-header-logout-icon">
-            <div className="icon1__inner" onClick={logout}>
-                <img src={LogoutIcon} alt="Odjava" width="30"/>
+        <div className="sidebar-header-button">
+            <div className="sidebar-header-button-icon">
+                <img src={SettingsIcon} alt="Nastavitve" width="25"/>
+            </div>
+        </div>
+        <div className="sidebar-header-button">
+            <div className="sidebar-header-button-icon" onClick={logout}>
+                <img src={LogoutIcon} alt="Odjava" width="23"/>
             </div>
         </div>
     </div>
