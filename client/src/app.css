@@ -138,8 +138,8 @@ body {
   display: none;
 }
 
-.str-chat__list {
-  padding: 0 15px;
+.str-chat__message-list-scroll {
+  padding: 0 50px;
 }
 
 .str-chat__list .str-chat__reverse-infinite-scroll {
