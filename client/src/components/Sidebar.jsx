@@ -8,7 +8,7 @@ import ChatPreview from './ChatPreview'
 import SettingsIcon from '../assets/settings.png'
 import LogoutIcon from '../assets/logout.png'
 
-import './Sidebar.css'
+import '../styles/Sidebar.css'
 
 const cookies = new Cookies()
 

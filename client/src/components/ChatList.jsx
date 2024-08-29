@@ -2,7 +2,7 @@ import React from 'react'
 
 import { AddChannel } from '../assets'
 
-import './ChatList.css'
+import '../styles/ChatList.css'
 
 const ChatListItems = ({ children }) => {
     if (!children.props.children) {

@@ -3,7 +3,7 @@ import { StreamChat } from 'stream-chat'
 import { Chat } from 'stream-chat-react'
 import Cookies from 'universal-cookie'
 
-import './app.css'
+import './App.css'
 import 'stream-chat-react/dist/css/index.css' // using their CSS for prebuilt components
 
 // komponente

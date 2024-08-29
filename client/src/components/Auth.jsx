@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Cookies from 'universal-cookie'
 import axios from 'axios'
 
-import './Auth.css'
+import '../styles/Auth.css'
 
 const cookies = new Cookies() 
 
