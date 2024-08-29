@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/FRIChat/static/css/main.b132519e.css",
-    "main.js": "/FRIChat/static/js/main.bfdab74e.js",
+    "main.js": "/FRIChat/static/js/main.2904235b.js",
     "static/js/801.c77bf63a.chunk.js": "/FRIChat/static/js/801.c77bf63a.chunk.js",
     "static/js/744.3438c4aa.chunk.js": "/FRIChat/static/js/744.3438c4aa.chunk.js",
     "index.html": "/FRIChat/index.html",
     "main.b132519e.css.map": "/FRIChat/static/css/main.b132519e.css.map",
-    "main.bfdab74e.js.map": "/FRIChat/static/js/main.bfdab74e.js.map",
+    "main.2904235b.js.map": "/FRIChat/static/js/main.2904235b.js.map",
     "801.c77bf63a.chunk.js.map": "/FRIChat/static/js/801.c77bf63a.chunk.js.map",
     "744.3438c4aa.chunk.js.map": "/FRIChat/static/js/744.3438c4aa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b132519e.css",
-    "static/js/main.bfdab74e.js"
+    "static/js/main.2904235b.js"
   ]
 }
