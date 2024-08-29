@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/FRIChat/static/css/main.c97d972f.css",
+    "main.js": "/FRIChat/static/js/main.04cc0f25.js",
+    "static/js/801.6ba399e6.chunk.js": "/FRIChat/static/js/801.6ba399e6.chunk.js",
+    "static/js/744.b3e8523c.chunk.js": "/FRIChat/static/js/744.b3e8523c.chunk.js",
+    "index.html": "/FRIChat/index.html",
+    "main.c97d972f.css.map": "/FRIChat/static/css/main.c97d972f.css.map",
+    "main.04cc0f25.js.map": "/FRIChat/static/js/main.04cc0f25.js.map",
+    "801.6ba399e6.chunk.js.map": "/FRIChat/static/js/801.6ba399e6.chunk.js.map",
+    "744.b3e8523c.chunk.js.map": "/FRIChat/static/js/744.b3e8523c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c97d972f.css",
+    "static/js/main.04cc0f25.js"
+  ]
+}
