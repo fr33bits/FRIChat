@@ -1,6 +1,6 @@
 # FRIChat
 
-Instant messaging service meant for communications in business and organizational settings. The client is built using React and hosted on GitHub Pages ([https://fr33bits.github.io/FRIChat/](https://fr33bits.github.io/FRIChat/)), while the backend uses a node.js servers running on an OnRender instance and uses the [Stream API](https://getstream.io/chat/) for backend storage and management.
+Instant messaging service meant for communications in business and organizational settings. The client is built using React and hosted on GitHub Pages ([https://fr33bits.github.io/FRIChat/](https://fr33bits.github.io/FRIChat/)), while the backend uses a node.js server running on an OnRender instance and uses the [Stream API](https://getstream.io/chat/) for backend storage and management.
 
 ## Testing
 

@@ -27,10 +27,10 @@ const Auth = () => {
         event.preventDefault() // preprečimo osveževanje strani
 
         const { username, password, avatarURL } = form
-        const URL = 'http://localhost:4000/auth'
+        const URL = process.env.API_SERVER_URL + 'auth/'
         try {
             const { data: { token, userID, hashedPassword, fullName }} = await axios.post(
-                `${URL}/${signingUp ? 'signup' : 'login'}`, 
+                `${URL}${signingUp ? 'signup' : 'login'}`, 
                 { username, password, fullName: form.fullName, avatarURL }
             )
 
