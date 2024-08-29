@@ -27,7 +27,7 @@ const Auth = () => {
         event.preventDefault() // preprečimo osveževanje strani
 
         const { username, password, avatarURL } = form
-        const URL = process.env.API_SERVER_URL + 'auth/'
+        const URL = "https://frichat.onrender.com/" + 'auth/'
         try {
             const { data: { token, userID, hashedPassword, fullName }} = await axios.post(
                 `${URL}${signingUp ? 'signup' : 'login'}`, 
